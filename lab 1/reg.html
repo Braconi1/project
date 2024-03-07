@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Registration Form!</h1>
+    <p>Please fill in this form to create an account!</p>
+      <hr>
+      <label for="name">Firstname:</label><br>
+      <input type="text" id="name" name="name" required><br>
+      
+      <label for="surname">Lastname:</label><br>
+      <input type="text" id="surname" name="surname" required><br>
+
+      <label for="username">Username:</label><br>
+      <input type="text" id="username" name="username" required><br>
+
+      <label for="adress">Adress:</label><br>
+      <input type="text" id="adress" name="adress" required><br><br>
+
+    
+        <label for="rod">Gender:</label><br>
+        <input type="radio" id="muski" name="rod" value="muski" required>
+        <label for="muski">Male</label><br>
+
+        <input type="radio" id="zenski" name="rod" value="zenski" required>
+        <label for="zenski">Female</label><br>
+
+        <input type="radio" id="other" name="rod" value="other" required>
+        <label for="other">Other</label><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="phone">Phone:</label><br>
+        <input type="phone" id="phone" name="phone" required><br><br>
+
+        <label for="hairColor">Hair Color:</label><br><br>
+        <select id="hairColor" name="hairColor" required>
+            <option value="">Choose</option>
+            <option value="black">Black</option>
+            <option value="blonde">Blonde</option>
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="orange">Orange</option>
+            <option value="purple">Purple</option>
+            <option value="pink">Pink</option>
+            <option value="brown">Brown</option>
+            <option value="white">White</option>
+            <option value="other">Other</option>
+        </select><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br>
+        
+        <label for="confirm_password">Confirm Password:</label><br>
+        <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+
+        <label for="notes">Notes:</label><br>
+        <textarea id="notes" name="notes" rows="4" cols="50"></textarea><br><br>
+
+
+        <label>
+            <input type="checkbox" name="notification" required> Would you like to recieve an notification on email? <a href="#" style="color:rgb(236, 13, 13)"></a>.
+        </label><br><br>
+
+
+        <label>
+            <input type="checkbox" name="terms" required> By creating an account you agree to our <a href="#" style="color:rgb(0, 198, 233)">Terms & Privacy</a>.
+        </label><br><br>
+
+      
+    
+
+      <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
