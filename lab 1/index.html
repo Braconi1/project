@@ -7,20 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>International Burch University</h1>
-    <h2>Login Page</h2>
+    <img src="burch.png" alt="" style="max-width: 100%; margin-left: 750px;">
+    <h2 style="margin-left: 800px;">International Burch University</h2>
+    <h2 style="display: flex; justify-content: center; margin-top: 50px;">Login Page</h2>
 
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+    <form method="post" action="/submit_form" style="display: flex; flex-direction: column; align-items: center;">
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" id="email" required><br>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" id="psw" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" id="psw" required><br>
 
-    <p>Dont have an account?<a href="Reg.html"> Register now!</a></p>
+        <p style="text-align: center;">Dont have an account?<a href="Reg.html"> Register now!</a></p>
 
-    <span class="psw">Forgot <a href="password.html">password?</a></span>
+        <span class="psw" style="text-align: center;">Forgot <a href="password.html">password?</a></span>
 
-    <button Type="submit"><a href="log.html">Submit</a></button>
+        <button Type="submit" style="margin-top: 10px;"><a href="log.html" >Submit</a></button>
+    </form>
+    </table>
 
 
 </body>
