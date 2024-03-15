@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  background-color: #85AFD4;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 20px; 
+}
+
+h3 {
+  font-weight: normal; 
+  margin-bottom: 10px; 
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input[type="text"],
+form input[type="password"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #85AFD4;
+  margin-bottom: 20px;
+  width: 300px;
+}
+
+form p {
+  text-align: center;
+  margin-top: 20px;
+}
+
+form p a {
+  font-weight: bold;
+  color: #E47272;
+  text-decoration: none;
+}
+
+form p a:hover {
+  color: #B84D4D;
+}
+
+form .psw {
+  margin-top: 20px;
+}
+
+form .psw a {
+  font-weight: bold;
+  color: #E47272;
+  text-decoration: none;
+}
+
+form .psw a:hover {
+  color: #B84D4D;
+}
+
+form button[type="submit"] {
+  background-color: #E47272;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; 
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+form button[type="submit"] a {
+  color: white;
+  text-decoration: none;
+}
+
+form button[type="submit"] a:hover {
+  color: #B84D4D;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+th, td {
+  border: 2px solid white; 
+  padding: 10px; 
+}

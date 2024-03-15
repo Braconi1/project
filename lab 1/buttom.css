@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+body {
+  background-color: #85AFD4;
+  font-family: 'Lato', sans-serif;
+  color: white;
+  text-align: center;
+}
+
+button.reset-btn {
+  background-color: #E47272;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px; 
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+button.reset-btn:hover {
+  background-color: #B84D4D;
+}
+
+button a {
+
+    text-decoration: none;
+    color: white;
+
+}
