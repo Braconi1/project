@@ -1,0 +1,24 @@
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.main-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px; /* Adjust height as needed */
+    background-color: #333; /* Example background color */
+}
+
+.navbar {
+    /* Additional styles for the navigation bar */
+}
+
+.Shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Adjust minimum height as needed */
+}
