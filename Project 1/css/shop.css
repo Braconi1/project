@@ -186,7 +186,7 @@ nav .content .links li label:hover {
     font-size: 17px;
     color: #fff;
     background: #8d2727;
-    padding: 0 100px 0 15px;
+    padding: 1;
 }
 
 .search-box input::placeholder {
@@ -213,6 +213,7 @@ nav .content .links li label:hover {
 }
 
 /* Responsivity */
+
 @media screen and (max-width: 768px) { 
     .header nav {
         max-width: 100%;
@@ -237,19 +238,8 @@ nav .content .links li label:hover {
 }
 
 /* Responsivity for max-width: 900px */
+
 @media screen and (max-width: 900px) {
-    
-    .img-container {
-        display: flex;
-        justify-content: center; /* Center horizontally */
-        align-items: center; /* Center vertically */
-        height: 100vh; /* Set the height to full viewport height */
-    }
-    
-    .img-container img {
-        max-width: 100%; /* Ensure the image fits within the container */
-        max-height: 100%; /* Ensure the image fits within the container */
-    }
     .header .menu-icon {
         display: block;
     }
@@ -294,9 +284,8 @@ nav .content .links li label:hover {
         display: none;
     }
 
-    /* Additional responsiveness for footer */
     footer {
-        padding: 20px 10px; /* Adjust padding for smaller screens */
+        padding: 20px 10px; 
     }
 
     .subscribe-form input[type="email"] {
@@ -304,7 +293,7 @@ nav .content .links li label:hover {
         border-radius: 5px;
         border: 1px solid #ccc;
         margin-right: 5px;
-        width: calc(100% - 100px); /* Adjust width for smaller screens */
+        width: calc(100% - 100px); 
     }
 
     .subscribe-form button {
@@ -314,16 +303,16 @@ nav .content .links li label:hover {
         color: white;
         border: none;
         cursor: pointer;
-        width: 100px; /* Adjust width for smaller screens */
+        width: 100px; 
     }
 
     .social-icons a {
-        margin: 0 5px; /* Adjust margin for smaller screens */
-        font-size: 20px; /* Adjust font size for smaller screens */
+        margin: 0 5px; 
+        font-size: 20px; 
     }
 
     .copyright {
-        font-size: 10px; /* Adjust font size for smaller screens */
+        font-size: 10px; 
     }
 }
 
@@ -374,3 +363,46 @@ nav .content .links li label:hover {
     margin-top: 20px;
     font-size: 12px;
 }
+
+
+/* Modal styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  
+  /* Modal Content (image) */
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    height: auto;
+  }
+  
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #999;
+    text-decoration: none;
+    cursor: pointer;
+  }
