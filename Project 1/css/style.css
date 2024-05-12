@@ -155,6 +155,7 @@ nav .content .links li label:hover {
 }
 
 /* Responsivity */
+
 @media screen and (max-width: 768px) { 
     .header nav {
         max-width: 100%;
@@ -179,6 +180,7 @@ nav .content .links li label:hover {
 }
 
 /* Responsivity for max-width: 900px */
+
 @media screen and (max-width: 900px) {
     .header .menu-icon {
         display: block;
@@ -224,10 +226,8 @@ nav .content .links li label:hover {
         display: none;
     }
 
-    /* Additional responsiveness for footer */
-
     footer {
-        padding: 20px 10px; /* Adjust padding for smaller screens */
+        padding: 20px 10px; 
     }
 
     .subscribe-form input[type="email"] {
@@ -235,7 +235,7 @@ nav .content .links li label:hover {
         border-radius: 5px;
         border: 1px solid #ccc;
         margin-right: 5px;
-        width: calc(100% - 100px); /* Adjust width for smaller screens */
+        width: calc(100% - 100px); 
     }
 
     .subscribe-form button {
