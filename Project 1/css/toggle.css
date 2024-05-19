@@ -1,0 +1,32 @@
+/* Default light theme styles */
+body {
+    background-color: #fff;
+    color: #000;
+}
+
+/* Dark theme styles */
+body.dark-theme {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Theme toggle label */
+.theme-toggle-label {
+    display: block;
+    margin: 20px;
+    font-size: 1.2em;
+}
+
+#theme-toggle {
+    display: none;
+}
+
+#theme-toggle + .theme-toggle-label:before {
+    content: "🌞";
+    display: inline-block;
+    margin-right: 10px;
+}
+
+#theme-toggle:checked + .theme-toggle-label:before {
+    content: "🌙";
+}
