@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Admin Page</h1>
+<div id="entityContainer"></div>
+<button id="logoutButton">Logout</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (localStorage.getItem("loggedIn") !== "true" || localStorage.getItem("role") !== "admin") {
+            window.location.href = "login.html"; // Redirect to login page if not logged in as admin
+        }
+
+        var entityContainer = document.getElementById("entityContainer");
+        var entity = {
+            id: 1,
+            name: "Sample Entity",
+            description: "This is a sample entity for demonstration purposes."
+        };
+
+        function renderEntity() {
+            entityContainer.innerHTML = `
+                <div>
+                    <h2>${entity.name}</h2>
+                    <p>${entity.description}</p>
+                    <button onclick="editEntity(${entity.id})">Edit</button>
+                    <button onclick="deleteEntity(${entity.id})">Delete</button>
+                </div>
+                <div id="editFormContainer"></div>
+            `;
+        }
+
+        renderEntity();
+
+        window.editEntity = function(id) {
+            var editFormContainer = document.getElementById("editFormContainer");
+            editFormContainer.innerHTML = `
+                <form id="editForm">
+                    <div class="form-group">
+                        <label for="editName">Name</label>
+                        <input type="text" id="editName" name="editName" value="${entity.name}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDescription">Description</label>
+                        <input type="text" id="editDescription" name="editDescription" value="${entity.description}" required>
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            `;
+
+            document.getElementById("editForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                entity.name = document.getElementById("editName").value;
+                entity.description = document.getElementById("editDescription").value;
+                alert("Entity updated successfully!");
+                renderEntity();
+            });
+        };
+
+        window.deleteEntity = function(id) {
+            if (confirm("Are you sure you want to delete this entity?")) {
+                entity = null;
+                alert("Entity deleted successfully!");
+                entityContainer.innerHTML = "<p>No entity available.</p>";
+            }
+        };
+
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            localStorage.removeItem("loggedIn");
+            localStorage.removeItem("role");
+            alert("You have been logged out.");
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    });
+</script>
+
+</body>
+</html>

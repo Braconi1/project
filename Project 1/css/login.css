@@ -9,7 +9,7 @@
 
 body{
   background: #dfe9f5;
-  background: rgb(182, 208, 226);
+  background: rgb(141, 94, 94);
 }
 
 .wrapper{
@@ -48,11 +48,11 @@ button{
   width: 90%;
   color: #fff;
   cursor: pointer;
-  background: rgb(17, 107, 143);
+  background: rgb(112, 35, 35);
 }
 
 button:hover{
-  background: rgba(17, 107, 143, 0.877);
+  background: rgba(247, 9, 9, 0.877);
 }
 
 input:focus{

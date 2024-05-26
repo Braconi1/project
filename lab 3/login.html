@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+        }
+        .error {
+            color: red;
+        }
+        #loginForm {
+        background: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        text-align: center;
+        }
+        .form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #E47272;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #d65f5f;
+}
+    </style>
+</head>
+<body>
+
+<form id="loginForm">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script>
+    $(function() {
+        $("#loginForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                }
+            },
+            messages: {
+                email: "Please enter a valid email address",
+                password: "Please provide your password"
+            },
+            submitHandler: function(form) {
+                console.log("Login form submitted");
+
+                var email = $("#email").val();
+                var password = $("#password").val();
+                var storedUserData = localStorage.getItem("userData");
+
+                if (email === "admin@example.com" && password === "123") {
+                    alert("Admin login successful!");
+                    localStorage.setItem("loggedIn", "true");
+                    localStorage.setItem("role", "admin");
+                    window.location.href = "admin.html"; // Redirect to the admin page
+                } else if (storedUserData) {
+                    var userData = JSON.parse(storedUserData);
+                    if (email === userData.email && password === userData.password) {
+                        alert("Login successful!");
+                        localStorage.setItem("loggedIn", "true");
+                        localStorage.setItem("role", userData.role);
+                        window.location.href = "user.html"; // Redirect to the user page
+                    } else {
+                        alert("Invalid email or password. Please try again.");
+                    }
+                } else {
+                    alert("No registered user found. Please register first.");
+                }
+                return false;
+            }
+        });
+
+        // Check if the user is already logged in
+        if (localStorage.getItem("loggedIn") === "true") {
+            var role = localStorage.getItem("role");
+            if (role === "admin") {
+                window.location.href = "admin.html"; // Redirect to the admin page
+            } else {
+                window.location.href = "user.html"; // Redirect to the user page
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

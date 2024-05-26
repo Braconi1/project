@@ -1,16 +1,10 @@
-/* Default light theme styles */
-body {
-    background-color: #fff;
-    color: #000;
-}
-
-/* Dark theme styles */
 body.dark-theme {
     background-color: #000;
-    color: #fff;
+    color: #ffffff;
 }
 
-/* Theme toggle label */
+
+
 .theme-toggle-label {
     display: block;
     margin: 20px;
