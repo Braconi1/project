@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Page</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+
+<h1>Admin Page</h1>
+<div id="entityContainer"></div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var entityContainer = document.getElementById("entityContainer");
+
+        function renderUsers() {
+            var userData = JSON.parse(localStorage.getItem("userData"));
+            if (!userData) {
+                entityContainer.innerHTML = "<p>No user data available.</p>";
+                return;
+            }
+
+            var tableHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Username</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Date</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>${userData.username}</td>
+                            <td>${userData.name}</td>
+                            <td>${userData.email}</td>
+                            <td>${userData.date}</td>
+                            <td>
+                                <button onclick="editUser()">Edit</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            `;
+
+            entityContainer.innerHTML = tableHTML;
+        }
+
+        renderUsers();
+
+        function editUser() {
+            var userData = JSON.parse(localStorage.getItem("userData"));
+            if (!userData) return;
+
+            var editFormHTML = `
+                <form id="editForm">
+                    <div class="form-group">
+                        <label for="editUsername">Username</label>
+                        <input type="text" id="editUsername" name="editUsername" value="${userData.username}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editName">Name</label>
+                        <input type="text" id="editName" name="editName" value="${userData.name}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editEmail">Email</label>
+                        <input type="email" id="editEmail" name="editEmail" value="${userData.email}" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDate">Date</label>
+                        <input type="text" id="editDate" name="editDate" value="${userData.date}" required>
+                    </div>
+                    <button type="submit">Save</button>
+                </form>
+            `;
+
+            entityContainer.innerHTML = editFormHTML;
+
+            document.getElementById("editForm").addEventListener("submit", function(e) {
+                e.preventDefault();
+                userData.username = document.getElementById("editUsername").value;
+                userData.name = document.getElementById("editName").value;
+                userData.email = document.getElementById("editEmail").value;
+                userData.date = document.getElementById("editDate").value;
+                localStorage.setItem("userData", JSON.stringify(userData));
+                renderUsers();
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

@@ -3,13 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up Form</title>
+    <title>Contact Form</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
-    <link rel="stylesheet" href="./css/reg.css">
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+        }
+        .error {
+            color: red;
+        }
+    </style>
 </head>
 <body>
 
-<form id="signupForm">
+<form id="contactForm">
     <div class="form-group">
         <label for="name">Name</label>
         <input type="text" id="name" name="name" required>
@@ -28,15 +38,7 @@
         <span id="passwordStrength"></span>
     </div>
     <button type="submit">Submit</button>
-    <div id="notification" class="notification">Registration successful! You can now log in.</div>
-    <div class="member">
-        Already a member? <a href="login.html">
-            Login Here
-        </a>
-    </div>
 </form>
-
-<div id="popoutNotification" class="popout-notification">Registration successful!</div>
 
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -61,7 +63,7 @@
             $("#passwordStrength").text(strengthText[strength]);
         });
 
-        $("#signupForm").validate({
+        $("#contactForm").validate({
             rules: {
                 name: { required: true },
                 email: { required: true, email: true },
@@ -89,20 +91,11 @@
                     date: $("#date").val(),
                     password: $("#password").val()
                 };
-                
-                // Save user data to localStorage
+                console.log("Saving user data:", userData);
                 localStorage.setItem("userData", JSON.stringify(userData));
-
-                // Display success notification
-                $("#notification").fadeIn().delay(3000).fadeOut();
-
-                // Display pop-out notification
-                $("#popoutNotification").fadeIn().delay(3000).fadeOut();
-
-                // Clear the form
+                alert("Registration successful! You can now log in.");
                 form.reset();
-                
-                return false; // Prevent default form submission
+                return false;
             }
         });
     });

@@ -23,9 +23,11 @@ html::-webkit-scrollbar-scrollbar {
     width: 10px;
 }
 
-body { 
+body {
+    color: rgba(0, 0, 0, 0.616); 
     background: rgb(141, 94, 94);
 }
+
 
 .logo img {
     margin-top: 1px;

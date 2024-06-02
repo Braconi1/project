@@ -49,12 +49,10 @@ In shop.html, as in every page I explained earlier, there are cards present. The
 about.html
 -----------
 
+In about.html, there is a box containing animated text that will fade in within 0.3 seconds in the CSS file, as well as the logo itself.
 
 
 ----------------------------
-
-
-
 
 Help with repository for the pages: ChatGpt, Black Box AI, Instagram Reels.
 

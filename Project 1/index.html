@@ -14,6 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/toggle.css">
 
 </head>
 <body>
@@ -35,6 +36,7 @@
                     <li><a href="forum.html">Contact</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="login.html">Login</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </u1>
             </div>
         </nav>
@@ -50,34 +52,54 @@
             <p class="text">Welcome to Revlon Perfume Shop! Search our new perfume down bellow!</p><br>
             <button onclick="window.location.href='shop.html'">Shop Now</button>
         </div>
+        <!-- Theme Toggle Label -->
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="theme-toggle-label">Toggle Theme</label>
         
     </main>
 
-    <!--Footer-->
+    <!--Footer Start-->
 
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h4>About Us</h4>
-                <p>Revlon is a newly founded company that specializes in perfumes. Our mission is to create captivating fragrances that resonate with individuals' unique personalities and preferences.</p>
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="./pictures/revlon logo 1.png" alt="Logo" class="logo-image">
+                <p>Hi welcome to our Website</p>
             </div>
-            <div class="footer-section">
-                <h4>Contact Us</h4>
-                <p>Email: revlon@example.com</p>
-                <p>Phone: +1234567890</p>
+            <div class="col">
+                <a href="forum.html">Contact</a><br>
+                <a href="forum.html">Support</a><br>
+                <a href="#">Privacy</a>
+                <br>
             </div>
-            <div class="footer-section">
-                <h4>Follow Us</h4>
+            <div class="col">
+                <p>More In future!</p>
+            </div>
+            <div class="col">
+                <div class="subscribe-form">
+                    <label for="email">Subscribe: </label>
+                    <input type="email" id="email" name="email" placeholder="Put email here">
+                    <button type="submit">Send it</button>
+                </div>
+                <br>
+            <div class="col">
+                Follow us on social media:
+                <br>
                 <div class="social-icons">
-                    <a href="#" class="icon"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="icon"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="www.instagram.com"><i class="fab fa-twitter"></i></a>
+                    <a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="www.twitter.com"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
+
         </div>
         <div class="copyright">
-            &copy; 2024 Revlon. All Rights Reserved.
+            &copy; 2024 Revlon. All rights reserved.
         </div>
+    </footer>
+
+     <!-- Add this new script for theme toggle -->
+     <script src="./js/toggle.js"></script>
 
     <!--Awesome icons script-->
 
