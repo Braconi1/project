@@ -1,1 +1,0 @@
-# This code serves as an example of SPAPP implementation.
