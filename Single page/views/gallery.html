@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revlon Perfume Shop</title>
+
+    <!--NavBars-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <!--Google Text links-->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="./css/gallery.css">
+
+</head>
+<body>
+
+    <!--Header-->
+
+    <div class="header">
+        <nav>
+            <input type="checkbox" id="show-menu">
+            <label for="show-menu" class="menu-icon"><i class="fas fa-bars"></i></label>
+            
+            <div class="content">
+                <div class="logo">
+                    <div class="logo"><a href="index.html"><img src="./pictures/revlon-logo.png" alt=""></a></div>
+                </div>
+                <u1 class="links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="shop.html">Discover</a></li>
+                    <li><a href="forum.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                </u1>
+            </div>
+        </nav>
+    </div>
+
+    <!--Header End-->
+
+    <!--Content of store-->
+
+    <div class="full-img" id="fullimgBox">
+        <img src="./gallery/1.jpg"id="fullimg">
+        <span onclick="closeFullImg()">X</span>
+        <span class="prev" onclick="prevImage()">&lt;</span>
+        <span class="next" onclick="nextImage()">&gt;</span>
+    </div>
+
+    <div class="img-gallery">
+        <img src="./gallery/1.jpg" onclick="openFullImg(this.src)">
+        <img src="./gallery/2.jpg" onclick="openFullImg(this.src)">
+        <img src="./gallery/3.jpg" onclick="openFullImg(this.src)">
+        <img src="./gallery/4.jpg" onclick="openFullImg(this.src)">
+        <img src="./gallery/5.jpg" onclick="openFullImg(this.src)">
+        <img src="./gallery/6.jpg" onclick="openFullImg(this.src)">
+    </div>
+
+
+    <!--Footer Start-->
+
+    <footer>
+        <div class="row">
+            <div class="col">
+                <img src="./pictures/revlon logo 1.png" alt="Logo" class="logo-image">
+                <p>Hi welcome to our Website</p>
+            </div>
+            <div class="col">
+                <a href="forum.html">Contact</a><br>
+                <a href="forum.html">Support</a><br>
+                <a href="#">Privacy</a>
+                <br>
+            </div>
+            <div class="col">
+                <p>More In future!</p>
+            </div>
+            <div class="col">
+                <div class="subscribe-form">
+                    <label for="email">Subscribe: </label>
+                    <input type="email" id="email" name="email" placeholder="Put email here">
+                    <button type="submit">Send it</button>
+                </div>
+                <br>
+            <div class="col">
+                Follow us on social media:
+                <br>
+                <div class="social-icons">
+                    <a href="www.instagram.com"><i class="fab fa-twitter"></i></a>
+                    <a href="www.facebook.com"><i class="fab fa-facebook"></i></a>
+                    <a href="www.twitter.com"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+        </div>
+        <div class="copyright">
+            &copy; 2024 Revlon. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+
+        var currentImageIndex = 0;
+
+        var fullimgBox = document.getElementById("fullimgBox");
+        var fullimg = document.getElementById("fullimg");
+
+        function openFullImg(pic) {
+            fullimgBox.style.display = "flex";
+            fullimg.src = pic;
+            currentImageIndex = getImageIndex(pic);
+        }
+
+        function prevImage() {
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                var prevImage = document.querySelector('.img-gallery img:nth-child(' + (currentImageIndex + 1) + ')');
+                fullimg.src = prevImage.src;
+            }
+        }
+
+        function nextImage() {
+            var totalImages = document.querySelectorAll('.img-gallery img').length;
+            if (currentImageIndex < totalImages - 1) {
+                currentImageIndex++;
+                var nextImage = document.querySelector('.img-gallery img:nth-child(' + (currentImageIndex + 1) + ')');
+                fullimg.src = nextImage.src;
+            }
+        }
+
+        function getImageIndex(pic) {
+            var images = document.querySelectorAll('.img-gallery img');
+            for (var i = 0; i < images.length; i++) {
+                if (images[i].src === pic) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        function closeFullImg() {
+            fullimgBox.style.display = "none";
+        }
+    </script>
+
+    
+
+    <!--Awesome icons script-->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</body>
+</body>
+</html>

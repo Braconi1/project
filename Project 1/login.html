@@ -3,28 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Login</title>
     <link rel="stylesheet" href="./css/login.css">
 </head>
-</head>
 <body>
-    <div class="wrapper">
-        <h1>Please Login</h1>
-        <form action="#">
-            <input type="text" placeholder="Username & Email">
-            <input type="password" placeholder="Password">
-        </form>
-        <div class="terms">
-            <input type="checkbox" id="checkbox">
-            <label for="checkbox">I agree to these <a href="#">Terms & Conditions</a></label>
-        </div>
-        <button onclick="window.location.href='index.html'">Login</button>
-        <div class="member">
-            Not a member? <a href="Reg.html">
-                Create a new account
-            </a>
-        </div>
+
+<form id="loginForm">
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
     </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit">Login</button>
+    <div class="member">
+        Not a member? <a href="Reg.html">
+            Sign Here
+        </a>
+    </div>
+</form>
+
+<div id="notification" class="notification">Admin login successful!</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
+<script>
+    $(function() {
+        $("#loginForm").validate({
+            rules: {
+                email: {
+                    required: true,
+                    email: true
+                },
+                password: {
+                    required: true
+                }
+            },
+            messages: {
+                email: "Please enter a valid email address",
+                password: "Please provide your password"
+            },
+            submitHandler: function(form) {
+                var email = $("#email").val();
+                var password = $("#password").val();
+                var storedUserData = localStorage.getItem("userData");
+
+                if (email === "admin@admin" && password === "123") {
+                    localStorage.setItem("loggedIn", "true");
+                    localStorage.setItem("role", "admin");
+                    showNotification("Admin login successful!");
+                    setTimeout(function() {
+                        window.location.href = "admin.html"; // Redirect to the admin page after 2 seconds
+                    }, 2000);
+                } else if (storedUserData) {
+                    var userData = JSON.parse(storedUserData);
+                    if (email === userData.email && password === userData.password) {
+                        alert("Login successful!");
+                        localStorage.setItem("loggedIn", "true");
+                        localStorage.setItem("role", userData.role);
+                        window.location.href = "user.html"; // Redirect to the user page
+                    } else {
+                        alert("Invalid email or password. Please try again.");
+                    }
+                } else {
+                    alert("No registered user found. Please register first.");
+                }
+                return false;
+            }
+        });
+
+        // Check if the user is already logged in
+        if (localStorage.getItem("loggedIn") === "true") {
+            var role = localStorage.getItem("role");
+            if (role === "admin") {
+                window.location.href = "admin.html"; // Redirect to the admin page
+            } else {
+                window.location.href = "user.html"; // Redirect to the user page
+            }
+        }
+    });
+
+    function showNotification(message) {
+        var notification = document.getElementById("notification");
+        notification.textContent = message;
+        notification.style.display = "block";
+        setTimeout(function() {
+            notification.style.display = "none";
+        }, 3000);
+    }
+</script>
 
 </body>
 </html>
