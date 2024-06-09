@@ -1,0 +1,50 @@
+
+  /* Toggle Container */
+.toggle-container {
+    display: inline-block;
+    position: relative;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Toggle Input (Hidden) */
+  .toggle-input {
+    display: none;
+  }
+  
+  /* Toggle Slider */
+  .toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    border-radius: 34px;
+    transition: background-color 0.4s;
+  }
+  
+  /* Toggle Slider: Before (Circle) */
+  .toggle-slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.4s;
+  }
+  
+  /* Toggle Input Checked Effect */
+  .toggle-input:checked + .toggle-slider {
+    background-color: #2196F3; /* Blue color when checked */
+  }
+  
+  /* Toggle Input Checked Effect: Before (Circle Position) */
+  .toggle-input:checked + .toggle-slider:before {
+    transform: translateX(26px); /* Move circle to the right when checked */
+  }
+  

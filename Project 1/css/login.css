@@ -1,92 +1,71 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
-
-* {
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   margin: 0;
-  padding: 0;
+  background-color: #f0f0f0;
+}
+#loginForm {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-body{
-  background: #dfe9f5;
-  background: rgb(141, 94, 94);
-}
-
-.wrapper{
-  width: 330px;
-  padding: 2rem 1rem;
-  margin: 50px auto;
-  background: #fff;
-  border-radius: 10px;
   text-align: center;
-  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.1);
 }
-
-h1{
-  font-size: 2rem;
-  color: #07001f;
-  margin-bottom: 1.2rem;
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
 }
-
-form input{
-  width: 92%;
-  outline: none;
-  border: 1px solid #fff;
-  padding: 12px 20px;
-  margin-bottom: 10px;
-  border-radius: 20px;
-  background: #e4e4e4;
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
-
-button{
-  font-size: 1rem;
-  margin-top: 1.8rem;
-  padding: 10px 0;
-  border-radius: 20px;
-  outline: none;
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+button[type="submit"] {
+  background-color: #E47272;
+  color: white;
+  padding: 10px 15px;
   border: none;
-  width: 90%;
-  color: #fff;
+  border-radius: 20px;
   cursor: pointer;
-  background: rgb(112, 35, 35);
+  font-weight: bold;
+  width: 100%;
 }
-
-button:hover{
-  background: rgba(247, 9, 9, 0.877);
+button[type="submit"]:hover {
+  background-color: #43b87d;
 }
-
-input:focus{
-  border: 1px solid rgb(192, 192, 192);
+.error {
+  color: red;
+  margin-top: 5px;
 }
-
-.terms{
-  margin-top: 0.2rem;
+.notification {
+  display: none;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
-
-.terms input{
-  height: 1em;
-  width: 1em;
-  vertical-align: middle;
-  cursor: pointer;
+@media (max-width: 768px) {
+  body {
+      padding: 20px;
+      box-sizing: border-box;
+  }
 }
-
-.terms label{
-  font-size: 0.7rem;
-}
-
-.terms a{
-  color: rgb(17, 107, 143);
-  text-decoration: none;
-}
-
-.member{
-  font-size: 0.8rem;
-  margin-top: 1.4rem;
-  color: #636363;
-}
-
-.member a{
-  color: rgb(17, 107, 143);
-  text-decoration: none;
-}
-

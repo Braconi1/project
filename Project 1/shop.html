@@ -42,6 +42,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Our Blog</a></li>
                 </u1>
             </div>
         </nav>
@@ -54,62 +55,93 @@
 
     <!--Content Shop buy-->
 
-    <div class="card-container">
-        
-        <div class="card">
-            <img src="./pictures/jean crni.jpg">
-            <div class="card-container">
-                <h3>LE MALE LE PARFUM </h3>
-                <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength.An elegant woody amber trail capturing the charisma and power of a leader. </p>
-                <div class="button-1">
-                    <a href="buy.html" class="btn">Buy</a>
+
+    <div class="cards-wrapper">
+        <div class="card-container">
+            <div class="card">
+                <img src="./pictures/jean crni.jpg" alt="Perfume Image">
+                <div class="card-container">
+                    <h3>LE MALE LE PARFUM</h3>
+                    <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength. An elegant woody amber trail capturing the charisma and power of a leader.</p>
+                    <div class="button-1">
+                        <button class="btn" onclick="showPopup()">View More</button>
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="card">
-            <img src="./pictures/jean zlatni.jpeg">
-            <div class="card-container">
-                <h3>LE MALE ELIXIR PARFUM</h3>
-                <p>The voyage is looking torrid with Le Male Elixir, the latest recruit of the Jean Paul Gaultier crew. Don’t touch! You’ll get burnt! And what of his sailor top? Its translucent brown suggests an amber wake so sensual that a single drop will make you reel.</p>
-                <div class="button-1">
-                    <a href="buy.html" class="btn">Buy</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="./pictures/jean paul1.jpeg">
-            <div class="card-container">
-                <h3>LE MALE BEAU EAU DE PARFUM</h3>
-                <p>In the Garden of Gaultier, temptation is even more sultry with Le Beau Le Parfum, the intense new eau de parfum.To seduce, all sins are permitted. Wearing nothing but a golden fig leaf</p>
-                <div class="button-1">
-                    <a href="buy.html" class="btn">Buy</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="./pictures/jean parfem.jpg">
-            <div class="card-container">
-                <h3>LE BEAU EAU DE TOILETTE</h3>
-                <p>After years of work in the factory, Jean Paul Gaultier opens the gates of his garden to us; a place of temptation and attraction. Le Beau Eau de Toilette by Jean Paul Gaultier, the original version. it is here that Le Beau Paradise Garden can be found. Burning with passion, the original man displays a true sense of style with his embellished sculpted torso. Inspired by the 2010-2011 Fall/Winter ready-to-wear collection.</p>
-                <div class="button-1">
-                    <a href="buy.html" class="btn">Buy</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <img src="./pictures/ultra male.jpg">
-            <div class="card-container">
-                <h3>LE ULTRA MALE</h3>
-                <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength.An elegant woody amber trail capturing the charisma and power of a leader.</p>
-                <div class="button-1">
-                    <a href="buy.html" class="btn">Buy</a>
-                </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="./pictures/jean paul1.jpeg" alt="Perfume Image">
+                <div class="card-container">
+                    <h3>LE MALE LE PARFUM</h3>
+                    <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength. An elegant woody amber trail capturing the charisma and power of a leader.</p>
+                    <div class="button-1">
+                        <button class="btn" onclick="showPopup()">View More</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+    <div class="popup-card" id="popupCard">
+        <h3>LE MALE LE PARFUM</h3>
+        <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength. An elegant woody amber trail capturing the charisma and power of a leader.</p>
+        <a href="details.html" class="btn">Buy</a>
+        <button class="btn" onclick="closePopup()">Close</button>
+    </div>
+
     
-    <!--Content Shop buy-->
+    <div class="cards-wrapper">
+        <div class="card-container">
+            <div class="card">
+                <img src="./pictures/jean zlatni.jpeg" alt="Perfume Image">
+                <div class="card-container">
+                    <h3>LE MALE LE PARFUM</h3>
+                    <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength. An elegant woody amber trail capturing the charisma and power of a leader.</p>
+                    <div class="button-1">
+                        <button class="btn" onclick="showPopup()">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-container">
+            <div class="card">
+                <img src="./pictures/jean parfem.jpg" alt="Perfume Image">
+                <div class="card-container">
+                    <h3>LE MALE LE PARFUM</h3>
+                    <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength. An elegant woody amber trail capturing the charisma and power of a leader.</p>
+                    <div class="button-1">
+                        <button class="btn" onclick="showPopup()">View More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+
+    <div class="popup-card" id="popupCard">
+        <h3>LE MALE LE PARFUM</h3>
+        <p>Set course for Le Male le Parfum by Jean Paul Gaultier! Dressed in a black and gold officer’s jacket, this intense eau de parfum is taking leadership of the Le Male range with great style and strength. An elegant woody amber trail capturing the charisma and power of a leader.</p>
+        <a href="details.html" class="btn">Buy</a>
+        <button class="btn" onclick="closePopup()">Close</button>
+    </div>
+
+    <script>
+        function showPopup() {
+            document.getElementById('popupCard').style.display = 'block';
+            document.getElementById('overlay').style.display = 'block';
+        }
+
+        function closePopup() {
+            document.getElementById('popupCard').style.display = 'none';
+            document.getElementById('overlay').style.display = 'none';
+        }
+    </script>
 
     <!--Footer-->
 

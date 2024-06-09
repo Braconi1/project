@@ -103,6 +103,81 @@ body {
     color: #fafafa;
 }
 
+/* FAQ */
+
+.faq-container {
+    width: 80%; 
+    max-width: 800px; 
+    background-color: white; 
+    padding: 20px; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    border-radius: 10px; 
+}
+
+/* Existing FAQ styles */
+.faq-section {
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    background-color: #942d2d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.toggle-button:hover {
+    background-color: #ac2402;
+}
+
+.toggle-content {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #912323;
+    border-radius: 5px;
+    background-color: #943030;
+}
+
+/* FAQ */
+
+/* BLOG POST */
+
+.container-blog {
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    padding: 21px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.blog-post {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.blog-post:last-child {
+    border-bottom: none;
+}
+
+.blog-post h2 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.blog-post p {
+    margin: 5px 0 0;
+    color: black;
+}
+
+
 /* Header Start */
 
 .header {
@@ -142,7 +217,7 @@ nav .content .links li {
 
 nav .content .links li a,
 nav .content .links li label {
-    color: #fff;
+    color: #ffffff;
     font-size: 18px;
     padding: 9px 17px;
     font-weight: bold;

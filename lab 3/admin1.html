@@ -5,95 +5,195 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Page</title>
     <style>
-        /* Your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        #entityContainer {
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #E47272;
+            color: white;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #E47272;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #d65f5f;
+        }
+        #editFormContainer {
+            margin-top: 20px;
+        }
+        .notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        #logoutButton {
+            background-color: #333;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        #logoutButton:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
 
-<h1>Admin Page</h1>
-<div id="entityContainer"></div>
-
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var entityContainer = document.getElementById("entityContainer");
-
-        function renderUsers() {
-            var userData = JSON.parse(localStorage.getItem("userData"));
-            if (!userData) {
-                entityContainer.innerHTML = "<p>No user data available.</p>";
-                return;
+    <h1>Admin Page</h1>
+    <div id="entityContainer"></div>
+    <button id="logoutButton">Logout</button>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var entityContainer = document.getElementById("entityContainer");
+    
+            function renderUsers() {
+                var userData = JSON.parse(localStorage.getItem("userData"));
+                if (!userData) {
+                    entityContainer.innerHTML = "<p>No user data available.</p>";
+                    return;
+                }
+    
+                var tableHTML = `
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Username</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Date</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>${userData.username}</td>
+                                <td>${userData.name}</td>
+                                <td>${userData.email}</td>
+                                <td>${userData.date}</td>
+                                <td>
+                                    <button onclick="editUser()">Edit</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                `;
+    
+                entityContainer.innerHTML = tableHTML;
             }
+    
+            renderUsers();
+    
+            function editUser() {
+                var userData = JSON.parse(localStorage.getItem("userData"));
+                if (!userData) return;
+    
+                var editFormHTML = `
+                    <form id="editForm">
+                        <div class="form-group">
+                            <label for="editUsername">Username</label>
+                            <input type="text" id="editUsername" name="editUsername" value="${userData.username}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editName">Name</label>
+                            <input type="text" id="editName" name="editName" value="${userData.name}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editEmail">Email</label>
+                            <input type="email" id="editEmail" name="editEmail" value="${userData.email}" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="editDate">Date</label>
+                            <input type="text" id="editDate" name="editDate" value="${userData.date}" required>
+                        </div>
+                        <button type="submit">Save</button>
+                    </form>
+                `;
+    
+                entityContainer.innerHTML = editFormHTML;
+    
+                document.getElementById("editForm").addEventListener("submit", function(e) {
+                    e.preventDefault();
+                    userData.username = document.getElementById("editUsername").value;
+                    userData.name = document.getElementById("editName").value;
+                    userData.email = document.getElementById("editEmail").value;
+                    userData.date = document.getElementById("editDate").value;
+                    localStorage.setItem("userData", JSON.stringify(userData));
+                    renderUsers();
+                });
 
-            var tableHTML = `
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Username</th>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Date</th>
-                            <th>Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>${userData.username}</td>
-                            <td>${userData.name}</td>
-                            <td>${userData.email}</td>
-                            <td>${userData.date}</td>
-                            <td>
-                                <button onclick="editUser()">Edit</button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            `;
-
-            entityContainer.innerHTML = tableHTML;
-        }
-
-        renderUsers();
-
-        function editUser() {
-            var userData = JSON.parse(localStorage.getItem("userData"));
-            if (!userData) return;
-
-            var editFormHTML = `
-                <form id="editForm">
-                    <div class="form-group">
-                        <label for="editUsername">Username</label>
-                        <input type="text" id="editUsername" name="editUsername" value="${userData.username}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editName">Name</label>
-                        <input type="text" id="editName" name="editName" value="${userData.name}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editEmail">Email</label>
-                        <input type="email" id="editEmail" name="editEmail" value="${userData.email}" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="editDate">Date</label>
-                        <input type="text" id="editDate" name="editDate" value="${userData.date}" required>
-                    </div>
-                    <button type="submit">Save</button>
-                </form>
-            `;
-
-            entityContainer.innerHTML = editFormHTML;
-
-            document.getElementById("editForm").addEventListener("submit", function(e) {
-                e.preventDefault();
-                userData.username = document.getElementById("editUsername").value;
-                userData.name = document.getElementById("editName").value;
-                userData.email = document.getElementById("editEmail").value;
-                userData.date = document.getElementById("editDate").value;
-                localStorage.setItem("userData", JSON.stringify(userData));
-                renderUsers();
-            });
-        }
-    });
-</script>
-
+                document.getElementById("logoutButton").addEventListener("click", function() {
+                    localStorage.removeItem("loggedIn");
+                    localStorage.removeItem("role");
+                    alert("You have been logged out.");
+                    window.location.href = "login.html"; // Redirect to login page
+        });
+            }
+    
+            // Define the editUser function globally
+            window.editUser = editUser;
+        });
+    </script>
+    
 </body>
 </html>

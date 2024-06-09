@@ -34,6 +34,7 @@
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="login.html">Login</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="blog.html">Our Blog</a></li>
                 </u1>
             </div>
         </nav>
@@ -52,9 +53,37 @@
 
     <!--Logo-->
 
-    <div class="logo-container animate-slide-up">
-        <img src="./pictures/imagev revlon new.jpg" alt="Logo">
+    <!--FAQ-->
+    <div class="faq-section">
+        <button class="toggle-button" onclick="toggleContent('faq1')">What is your return policy?</button>
+        <div id="faq1" class="toggle-content">
+            <h3>What is your return policy?</h3>
+            <p>We accept returns within 30 days of purchase. Items must be in their original condition and packaging. Please contact our support team to initiate a return.</p>
+        </div>
     </div>
+    <div class="faq-section">
+        <button class="toggle-button" onclick="toggleContent('faq2')">How do I track my order?</button>
+        <div id="faq2" class="toggle-content">
+            <h3>How do I track my order?</h3>
+            <p>Once your order has shipped, you will receive an email with a tracking number. You can use this number on our website to track your order's progress.</p>
+        </div>
+    </div>
+    <div class="faq-section">
+        <button class="toggle-button" onclick="toggleContent('faq3')">Do you offer international shipping?</button>
+        <div id="faq3" class="toggle-content">
+            <h3>Do you offer international shipping?</h3>
+            <p>Yes, we offer international shipping to many countries. Shipping fees and delivery times vary depending on the destination. Please see our shipping policy for more details.</p>
+        </div>
+    </div>
+    <div class="faq-section">
+        <button class="toggle-button" onclick="toggleContent('faq4')">What payment methods do you accept?</button>
+        <div id="faq4" class="toggle-content">
+            <h3>What payment methods do you accept?</h3>
+            <p>We accept a variety of payment methods, including credit/debit cards, PayPal, and Apple Pay. For more information, visit our payment options page.</p>
+        </div>
+    </div>
+
+    <!--FAQ-->
 
     <!--Footer-->
 
@@ -79,5 +108,7 @@
             &copy; 2024 Revlon. All Rights Reserved.
         </div>
     </footer>
+    <script src="./js/faq.js"></script>
+    <script src="./js/blog.js"></script>
 </body>
 </html>

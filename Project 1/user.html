@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Page</title>
+</head>
+<body>
+
+<h1>Welcome to the User Page</h1>
+<button id="logoutButton">Logout</button>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        if (localStorage.getItem("loggedIn") !== "true") {
+            window.location.href = "login.html"; // Redirect to login page if not logged in
+        }
+
+        document.getElementById("logoutButton").addEventListener("click", function() {
+            localStorage.removeItem("loggedIn");
+            alert("You have been logged out.");
+            window.location.href = "login.html"; // Redirect to login page
+        });
+    });
+</script>
+
+</body>
+</html>
